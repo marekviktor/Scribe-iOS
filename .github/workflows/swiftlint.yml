@@ -5,8 +5,12 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: macOS-latest
-
+    timeout-minutes: 10
+    
+    strategy:
+      fail-fast: true
     steps:
+    
     - uses: actions/checkout@v3
 
     # Set up Node.js version 16
